@@ -23,6 +23,15 @@ app = FastAPI()
 
 # Path Parameters
 
-@app.get("/users/{user_id}")
-def get_users(user_id:int):
-    return {"User_Id" : user_id}
+# @app.get("/users/{user_id}")
+# def get_users(user_id:int):
+#     return {"User_Id" : user_id}
+
+# Query Parameters
+
+@app.get("/students")
+def get_age(age:int = 20 , name : str = None):
+    return {
+        "Name" :name,
+        "Age" : age,
+         }

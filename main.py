@@ -2,18 +2,27 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get("/")
-def home():
-    return{"Hello Kamran"}
+# Simple get Routes Examples
 
-@app.get("/about")
-def about():
-    return{"This is About Page"}
+# @app.get("/")
+# def home():
+#     return{"Hello Kamran"}
 
-@app.get("/users")
-def about():
-    return{"Users" : {
-        "Ali",
-        "Ahmad",
-        "Kamran"
-    }}
+# @app.get("/about")
+# def about():
+#     return{"This is About Page"}
+
+# @app.get("/users")
+# def about():
+#     return{"Users" : {
+#         "Ali",
+#         "Ahmad",
+#         "Kamran"
+#     }}
+
+
+# Path Parameters
+
+@app.get("/users/{user_id}")
+def get_users(user_id:int):
+    return {"User_Id" : user_id}

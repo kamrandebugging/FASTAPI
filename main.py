@@ -1,6 +1,8 @@
 from fastapi import FastAPI
+from pydantic import BaseModel
 
 app = FastAPI()
+
 
 # Simple get Routes Examples
 
@@ -29,9 +31,20 @@ app = FastAPI()
 
 # Query Parameters
 
-@app.get("/students")
-def get_age(age:int = 20 , name : str = None):
-    return {
-        "Name" :name,
-        "Age" : age,
-         }
+# @app.get("/students")
+# def get_age(age:int = 20 , name : str = None):
+#     return {
+#         "Name" :name,
+#         "Age" : age,
+#          }
+
+# class Product(BaseModel):
+#     name : str
+#     quantity : int
+#     description : str
+#     price : float
+
+
+# @app.post("/products")
+# def add_product(product : Product):
+#     return product
